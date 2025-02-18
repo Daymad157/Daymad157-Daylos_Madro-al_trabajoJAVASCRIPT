@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link rel="stylesheet" href="./../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Empresa</h1>
+        <nav>
+            <a href="./../index.html">Inicio</a>
+            <a href="./galeria.html">Galeria</a>
+            <a href="./presupuesto.html" class="active">Presupuesto</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Calcula tu presupuesto</h2>
+        <form id="presupuesto-form">
+            <fieldset>
+                <legend>Datos de Contacto</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="15" >
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" maxlength="40" >
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" maxlength="9" >
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" >
+            </fieldset>
+
+            <fieldset>
+                <legend>Presupuesto</legend>
+                <label for="producto">Producto:</label>
+                <select id="producto" name="producto">
+                    <option value="50">Producto 1 - 50€</option>
+                    <option value="100">Producto 2 - 100€</option>
+                    <option value="150">Producto 3 - 150€</option>
+                </select>
+                <label for="plazo">Plazo de entrega (en días):</label>
+                <input type="number" id="plazo" name="plazo" min="1" required>
+                <label>Extras:</label>
+                <label><input type="checkbox" class="extra" value="10"> Extra 1 (+10€)</label>
+                <label><input type="checkbox" class="extra" value="20"> Extra 2 (+20€)</label>
+                <label><input type="checkbox" class="extra" value="30"> Extra 3 (+30€)</label>
+            </fieldset>
+
+            <div id="presupuestoFinal"></div>
+
+            <label>
+                <input type="checkbox" id="condiciones" required>
+                Acepto las condiciones de privacidad
+            </label>
+
+            <button type="submit">Enviar presupuesto</button>
+            <button type="reset">Reiniciar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Empresa</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="./../images/instagram.png" alt="Instagram" class="social-icon" width="30" height="30">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="./../images/ffacebook.png" alt="Facebook" class="social-icon" width="30" height="30">
+            </a>
+        </div>
+        <div class="company-info">
+            <p><a href="https://maps.app.goo.gl/LipC6ixx2EDWgt1s7" target="_blank">Dirección: Av. del Comercio, 11</a></p>
+            <p><a href="aviso-legal.html" target="_blank">Aviso Legal</a></p>
+        </div>
+    </footer>
+
+    <script src="./../js/presupuesto.js"></script>
+    <script src="./../js/form-validation.js"></script>
+</body>
+</html>

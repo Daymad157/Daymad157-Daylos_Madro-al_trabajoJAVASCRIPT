@@ -3,78 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería</title>
+    <title>Galeria</title>
     <link rel="stylesheet" href="./../css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Mi Empresa</h1>
-    <nav>
-        <a href="./../index.html">Inicio</a>
-        <a href="./galeria.html" class="active">Galería</a>
-        <a href="./presupuesto.html">Presupuesto</a>
-        <a href="./contacto.html">Contacto</a>
-    </nav>
-</header>
+    <header>
+        <h1>Mi Empresa</h1>
+        <nav>
+            <a href="./../../index.html">Inicio</a>
+            <a href="./galeria.html" class="active">Galeria</a>
+            <a href="./presupuesto.html">Presupuesto</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
     <main>
-        <h2>Galería de Imágenes</h2>
+        <h2>Galeria de Imágenes</h2>
         <div class="gallery">
-          <img src="./../images/img1.jpg" alt="Imagen 1" width="300" height="200">
-          <img src="./../images/img2.jpg" alt="Imagen 1" width="300" height="200">
-          <img src="./../images/img3.jpg" alt="Imagen 1" width="300" height="200">
-      </div>
+            <img src="./../../images/img1.jpg" alt="Producto 1: Diseño moderno en color negro" width="350" height="250">
+            <img src="./../../images/img2.jpg" alt="Producto 2: Diseño clásico en color marrón" width="380" height="280">
+            <img src="./../../images/img3.jpg" alt="Producto 3: Diseño minimalista en color blanco" width="400" height="300">
+        </div>
     </main>
+
     <footer>
-      <p>&copy; 2024 Mi Empresa</p>
-      <div class="social-icons">
-          <a href="https://www.instagram.com" target="_blank">
-              <img src="./../images/instragram.png" alt="Instagram" class="social-icon">
-          </a>
-          <a href="https://www.facebook.com" target="_blank">
-              <img src="./../images/Facebook.png" alt="Facebook" class="social-icon">
-          </a>
-      </div>
-      <div class="company-info">
-          <p><a href="https://maps.app.goo.gl/LipC6ixx2EDWgt1s7" target="_blank">Dirección: Av. del Comercio, 11</a></p>
-          <p><a href="aviso-legal.html" target="_blank">Aviso Legal</a></p>
-      </div>
-  </footer>
-
-    <!-- Modal de imagen ampliada -->
-    <div id="myModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="img01" src="default.jpg" alt="Modal Image">
-  </div>
-  
-
-    <script>
-      // Obtén el modal
-      var modal = document.getElementById("myModal");
-      var modalImg = document.getElementById("img01");
-      var close = document.getElementsByClassName("close")[0];
-
-      // Obtén todas las imágenes de la galería
-      var images = document.querySelectorAll(".gallery img");
-
-      // Cuando el usuario hace clic en una imagen, muestra el modal
-      images.forEach(function(image) {
-        image.onclick = function() {
-          modal.style.display = "flex"; // Muestra el modal
-          modalImg.src = this.src; // Asigna la imagen al modal
-        };
-      });
-
-      // Cuando el usuario hace clic en la X, cierra el modal
-      close.onclick = function() {
-        modal.style.display = "none"; // Oculta el modal
-      };
-
-      // Cerrar el modal si el usuario hace clic fuera de la imagen
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    </script>
+        <p>&copy; 2024 Mi Empresa</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="./../images/instagram.png" alt="Instagram" class="social-icon" width="30" height="30">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="./../images/facebook.png" alt="Facebook" class="social-icon" width="30" height="30">
+            </a>
+        </div>
+        <div class="company-info">
+            <p><a href="https://maps.app.goo.gl/LipC6ixx2EDWgt1s7" target="_blank">Dirección: Av. del Comercio, 11</a></p>
+            <p><a href="aviso-legal.html" target="_blank">Aviso Legal</a></p>
+        </div>
+    </footer>
 </body>
 </html>

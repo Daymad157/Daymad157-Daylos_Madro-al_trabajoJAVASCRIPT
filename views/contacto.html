@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <link rel="stylesheet" href="./../css/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" >
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="./../js/map.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Mi Empresa</h1>
         <nav>
-            <a href="./../index.html">Inicio</a>
-            <a href="./presupuesto.html">Galería</a>
+            <a href="./../../index.html">Inicio</a>
+            <a href="./galeria.html">Galeria</a>
             <a href="./presupuesto.html">Presupuesto</a>
             <a href="./contacto.html" class="active">Contacto</a>
         </nav>
     </header>
+
     <main>
         <h2>Contáctanos</h2>
         <section>
@@ -30,7 +33,6 @@
         <section>
             <h3>Ubicación de la Empresa</h3>
             <div id="map" style="width: 100%; height: 400px;"></div>
-            <button onclick="calcularRuta()">Calcular Ruta Desde Mi Ubicación</button>
         </section>
     </main>
 
@@ -38,50 +40,16 @@
         <p>&copy; 2024 Mi Empresa</p>
         <div class="social-icons">
             <a href="https://www.instagram.com" target="_blank">
-                <img src="./../images/instragram.png" alt="Instagram" class="social-icon" width="30" height="30">
+                <img src="./../images/instagram.png" alt="Instagram" class="social-icon" width="30" height="30">
             </a>
             <a href="https://www.facebook.com" target="_blank">
-                <img src="./../images/Facebook.png" alt="Facebook" class="social-icon" width="30" height="30">
+                <img src="./../images/facebook.png" alt="Facebook" class="social-icon" width="30" height="30">
             </a>
         </div>
+        <div class="company-info">
+            <p><a href="https://maps.app.goo.gl/LipC6ixx2EDWgt1s7" target="_blank">Dirección: Av. del Comercio, 11</a></p>
+            <p><a href="aviso-legal.html" target="_blank">Aviso Legal</a></p>
+        </div>
     </footer>
-
-    <script>
-        // Inicialización del mapa en OpenStreetMap con Leaflet
-        var map = L.map('map').setView([37.3866, -5.7187], 15); // Coordenadas aproximadas de Av. del Comercio, 11
-
-        // Cargar el mapa de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Agregar marcador con popup
-        var marker = L.marker([37.3866, -5.7187]).addTo(map)
-            .bindPopup("<b>Mi Empresa</b><br>Av. del Comercio, 11, El Viso del Alcor")
-            .openPopup();
-
-        // Función para calcular ruta desde la ubicación del usuario
-        function calcularRuta() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    var userLatLng = [position.coords.latitude, position.coords.longitude];
-
-                    L.Routing.control({
-                        waypoints: [
-                            L.latLng(userLatLng[0], userLatLng[1]), // Ubicación del usuario
-                            L.latLng(37.3866, -5.7187) // Ubicación de la empresa
-                        ],
-                        routeWhileDragging: true
-                    }).addTo(map);
-                }, () => {
-                    alert("No se pudo obtener tu ubicación.");
-                });
-            } else {
-                alert("Tu navegador no soporta geolocalización.");
-            }
-        }
-    </script>
-
-    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 </body>
 </html>
